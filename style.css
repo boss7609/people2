@@ -1,4 +1,6 @@
-/* 基本樣式重置 */
+/* ====================
+   基本樣式重置
+==================== */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +20,9 @@ body {
     padding: 0 15px;
 }
 
-/* 標題樣式 */
+/* ====================
+   標題區塊
+==================== */
 header {
     background: #2c3e50;
     color: #fff;
@@ -36,10 +40,13 @@ header p {
     opacity: 0.9;
 }
 
-/* 導航欄 */
+/* ====================
+   導航欄
+==================== */
 nav {
     background: #34495e;
     padding: 1rem 0;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -59,16 +66,20 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
     border-radius: 4px;
     transition: background 0.3s;
+    display: inline-block;
 }
 
 nav ul li a:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* 區段樣式 */
+/* ====================
+   區段通用樣式
+==================== */
 .section {
     padding: 4rem 0;
 }
@@ -84,7 +95,9 @@ nav ul li a:hover {
     background: #f9f9f9;
 }
 
-/* 關於我 */
+/* ====================
+   關於我區塊
+==================== */
 .about-content {
     display: flex;
     align-items: center;
@@ -109,7 +122,9 @@ nav ul li a:hover {
     margin-bottom: 1rem;
 }
 
-/* 技能 */
+/* ====================
+   技能區塊
+==================== */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -141,7 +156,9 @@ nav ul li a:hover {
     color: #2c3e50;
 }
 
-/* 作品集 */
+/* ====================
+   作品集區塊
+==================== */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -177,14 +194,17 @@ nav ul li a:hover {
     color: #666;
 }
 
-/* 聯絡方式 */
+/* ====================
+   聯絡方式區塊
+==================== */
 .contact-content {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.contact-info, .contact-form {
+.contact-info,
+.contact-form {
     flex: 1;
     min-width: 300px;
 }
@@ -224,6 +244,7 @@ nav ul li a:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-family: inherit;
+    font-size: 1rem;
 }
 
 .contact-form textarea {
@@ -246,7 +267,9 @@ nav ul li a:hover {
     background: #2980b9;
 }
 
-/* 頁尾 */
+/* ====================
+   頁尾
+==================== */
 footer {
     background: #2c3e50;
     color: #fff;
@@ -255,19 +278,55 @@ footer {
     margin-top: 2rem;
 }
 
-/* 響應式設計 */
+/* ====================
+   響應式設計：768px 以下
+==================== */
 @media (max-width: 768px) {
     .about-content {
         justify-content: center;
         text-align: center;
     }
-    
+
     nav ul {
         flex-direction: column;
         align-items: center;
     }
-    
+
     nav ul li {
         margin: 0.5rem 0;
+    }
+}
+
+/* ====================
+   響應式設計：480px 以下
+==================== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .skills-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-form button {
+        width: 100%;
     }
 }
